@@ -15,9 +15,9 @@ class UsersController < ApplicationController
       redirect_to @user # ここを修正
     else
       render 'new'
-   end
-   end
- end
+    end
+  end
+end
     
   
   def edit
@@ -26,14 +26,14 @@ class UsersController < ApplicationController
   
     def update
     if @user.update(user_params)
-      flash[:success] = "Update your profile"
+      flash[:success] = "Change your profile"
       # 保存に成功した場合はユーザーページへリダイレクト
       redirect_to edit_user_path , notice: 'プロフィールを更新しました'
     else
       # 更新に失敗した場合は編集画面へ戻す
       render 'edit'
     end
-  end
+    end
 
    private
 
