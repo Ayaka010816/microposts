@@ -1,0 +1,76 @@
+<h1>Profile</h1>
+
+<div class="row">
+    <div class="col-md-2 control-label">
+    <%= form_for(@user) do |f| %>
+      <%= render 'shared/error_messages', object: f.object %> 
+      
+      
+      <!-- (1)ユーザー名 -->
+  <div class="form-group">
+    <label class="col-md-2 control-label" for="UserName">ユーザー名</label>
+
+    <div class="col-md-10">
+      <input name="UserName"
+         class="form-control valid"
+         id="UserName"
+         type="text"
+         value=""
+         data-val-required="ユーザー名 フィールドが必要です。"
+         data-val="true">
+    </div>
+  </div>
+
+<!-- メールアドレス -->
+  <div class="form-group">
+    <label class="col-md-2 control-label" for="Email">メールアドレス</label>
+
+    <div class="col-md-10">
+      <input name="Email"
+         class="form-control valid"
+         id="email"
+         type="text"
+         value=""
+         data-val-required="メールアドレス フィールドが必要です。"
+         data-val="true">
+    </div>
+  </div>
+  
+  <!-- 自己紹介 -->
+  <div class="form-group">
+    <label class="col-md-2 control-label" for="Biography">自己紹介</label>
+
+    <div class="col-md-10">
+      <input name="Biography"
+         class="form-control valid"
+         id="Biography"
+         type="text"
+         value=""
+         data-val-required="自己紹介 フィールドが必要です。"
+         data-val="true">
+    </div>
+  </div>
+  
+<!-- 地域 -->
+  <div class="form-group">
+    <label class="col-md-2 control-label" for="Location">地域</label>
+
+    <div class="col-md-10">
+      <input name="Location"
+         class="form-control valid"
+         id="Location"
+         type="text"
+         value=""
+         data-val-required="地域 フィールドが必要です。"
+         data-val="true">
+    </div>
+  </div>
+  
+  <!-- (4)登録ボタン -->
+  <div class="form-group">
+    <div class="col-md-offset-2 col-md-10">
+      <input class="btn btn-default" type="submit" value="登録">
+    </div>
+  </div>
+
+
