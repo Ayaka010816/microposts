@@ -1,5 +1,10 @@
 class UsersController < ApplicationController
    before_action :set_user,       only: [:show, :edit, :update, :destroy]
+
+  # GET /users
+  def index
+    @users = User.all
+  end
   
   def show # 追加
   end
@@ -17,7 +22,6 @@ class UsersController < ApplicationController
       render 'new'
     end
   end
-end
     
   
   def edit
@@ -28,12 +32,13 @@ end
     if @user.update(user_params)
       flash[:success] = "Change your profile"
       # 保存に成功した場合はユーザーページへリダイレクト
-      redirect_to edit_user_path , notice: 'プロフィールを更新しました'
+      redirect_to @user , notice: 'プロフィールを更新しました'
     else
       # 更新に失敗した場合は編集画面へ戻す
       render 'edit'
     end
     end
+
 
    private
 
@@ -42,7 +47,9 @@ end
                                  :password_confirmation,:biography, :location)
   end
 
-def set_user
+ def set_user
   @user = User.find(params[:id])
   
+ end
+
 end
