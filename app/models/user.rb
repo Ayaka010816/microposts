@@ -5,8 +5,8 @@ class User < ActiveRecord::Base
   validates :email, presence: true, length: { maximum: 255 },
                     format: { with: VALID_EMAIL_REGEX },
                     uniqueness: { case_sensitive: false } #空でなく、また、最大255文字
-  validates :location, presence: true, length: { maximum: 255 }
-  validates :biography, presence: true, length: { maximum: 255 }#空でなく、また、最大255文字
+  validates :location, length: { maximum: 255 }
+  validates :biography, length: { maximum: 255 }#空でなく、また、最大255文字
                     
                     
                     
