@@ -8,7 +8,6 @@ class User < ActiveRecord::Base
   validates :location, length: { maximum: 255 }
   validates :biography, length: { maximum: 255 }#空でなく、また、最大255文字
                     
-                    
-                    
-    has_secure_password
+  has_secure_password
+  has_many :microposts  #それぞれのユーザーは複数の投稿を持つことができる。
 end
