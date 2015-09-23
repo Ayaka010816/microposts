@@ -7,8 +7,13 @@ Rails.application.routes.draw do
   delete 'logout'  => 'sessions#destroy'
   get     'users'  => 'users#edit' 
   
-  resources :users
   resources :sessions, only: [:new, :create, :destroy]
   resources :microposts #２で追加
   resources :relationships, only: [:create, :destroy]
+  resources :users do
+    member do
+      get :following
+      get :followers
+    end
+  end
 end

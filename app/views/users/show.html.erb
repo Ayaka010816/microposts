@@ -6,8 +6,15 @@
         <%= @user.name %>
       </h1>
     </section>
-  </aside>
-  <div class="col-md-8">
+    <section>
+      <span><%= link_to "#{@user.follower_users.count} followers", followers_user_path(@user) %></span>
+      <span><%= link_to "#{@user.following_users.count} following", following_user_path(@user) %></span>
+    </section>
+    </aside>
+    
+    
+  
+  <div class="col-md-6 col-md-offset-2">
     <%= render 'follow_form' if logged_in? %>
     <% if @user.microposts.any? %>
       <h3>Microposts (<%= @user.microposts.count %>)</h3>

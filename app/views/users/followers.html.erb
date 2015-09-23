@@ -1,0 +1,13 @@
+<div class="row">
+  <div class="col-md-4">
+ <ul>
+    <h2>followers</h2>
+  <% @followers.each do |u| %>
+   <li>
+  <%= link_to gravatar_for(u, size: 50), u %>
+   <span class="user"><%= link_to u.name, u %></span>
+  </li>
+  <% end %>
+ </ul>
+ </div>
+</div>
