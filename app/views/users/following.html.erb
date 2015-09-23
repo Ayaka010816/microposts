@@ -2,12 +2,12 @@
   <div class="col-md-4">
    <h2>following</h2>
  <ul>
-  <% @following.each do |u| %>
   <li>
+  <% @following.each do |u| %>
   <%= link_to gravatar_for(u, size: 50), u %>
   <span class="user"><%= link_to u.name, u %></span>
-  </li>
   <% end %>
+  </li>
  </ul>
   </div>
 </div>  
