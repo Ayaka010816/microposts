@@ -1,6 +1,7 @@
 <div class="row">
  <div class="col-md-4">
    <h1>Following</h1>
+   <%= paginate @following %> 
 <ul>
   <% @following.each do |u| %>
   <li>
