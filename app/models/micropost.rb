@@ -3,5 +3,5 @@ class Micropost < ActiveRecord::Base
   mount_uploader :image, ImageUploader
   validates :user_id, presence: true #user_idが存在する
   validates :content, presence: true, length: { maximum: 140 } #contentが存在し、また、文字数は最大140。
-  validates :image, presence: true
+  #validates :image, presence: true
 end
